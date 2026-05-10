@@ -1,0 +1,113 @@
+{
+  "id": "CHN",
+  "iso2": "CN",
+  "name": "China",
+  "region": "Asia",
+  "subregion": "East Asia",
+  "capital": "Beijing",
+  "lastUpdated": "2026-05-01",
+  "summary": "China is the world's second-largest economy (largest by PPP) and the primary strategic challenger to US global primacy. Under Xi Jinping's leadership since 2012, China has centralized political control, expanded military capabilities, deepened its Belt and Road infrastructure network, and asserted territorial claims in the South China Sea and Taiwan Strait. It presents itself as an alternative development model to Western liberal democracy.",
+  "indicators": {
+    "politicalStability":       { "score": 7, "trend": "stable",     "confidence": "medium", "note": "CCP control is firm; internal dissent suppressed. Succession mechanism remains opaque — a structural risk." },
+    "economicDirection":        { "score": 6, "trend": "declining",  "confidence": "medium", "note": "Property sector crisis, youth unemployment, and demographic decline are structural drags. State intervention increasing." },
+    "investmentAttractiveness": { "score": 4, "trend": "declining",  "confidence": "medium", "note": "Regulatory unpredictability, capital controls, and geopolitical risk deter foreign direct investment." },
+    "geopoliticalRisk":         { "score": 8, "trend": "rising",     "confidence": "high",   "note": "Taiwan scenario remains highest-risk flashpoint globally. South China Sea tensions ongoing." },
+    "educationQuality":         { "score": 8, "trend": "improving",  "confidence": "high",   "note": "Strong STEM output; top universities improving globally. Access uneven between urban and rural." },
+    "healthcareQuality":        { "score": 6, "trend": "improving",  "confidence": "medium", "note": "Rapid improvement in urban areas; rural-urban gap significant." },
+    "technologyInvestment":     { "score": 9, "trend": "improving",  "confidence": "high",   "note": "World leader in AI patents, 5G, EVs, solar. Semiconductor self-sufficiency is a national priority." }
+  },
+  "demographics": {
+    "population": 1409000000,
+    "medianAge": 39.0,
+    "urbanizationRate": 65,
+    "majorEthnicGroups": ["Han Chinese 92%", "Zhuang 1.3%", "Other 55 recognized groups 6.7%"],
+    "religions": [
+      { "name": "Unaffiliated / Folk", "percent": 52 },
+      { "name": "Buddhist", "percent": 18 },
+      { "name": "Christian", "percent": 5 },
+      { "name": "Muslim", "percent": 2 }
+    ]
+  },
+  "alliances": ["SCO", "BRICS", "RCEP", "WTO", "UN Security Council (P5)"],
+  "relationships": [
+    {
+      "countryId": "USA",
+      "countryName": "United States",
+      "type": "rival",
+      "sentiment": "negative",
+      "summary": "Systemic rivalry in trade, technology, and geopolitical influence. Both sides describe the relationship as the most consequential bilateral relationship in the world."
+    },
+    {
+      "countryId": "RUS",
+      "countryName": "Russia",
+      "type": "strategic_partner",
+      "sentiment": "positive",
+      "summary": "'No limits' partnership declared 2022. China buys Russian energy at discount; provides diplomatic cover. Not a formal military alliance."
+    },
+    {
+      "countryId": "THA",
+      "countryName": "Thailand",
+      "type": "strategic_partner",
+      "sentiment": "positive",
+      "summary": "Major trade partner and tourist source. BRI connectivity projects underway. Thailand's largest foreign investor in recent years."
+    }
+  ],
+  "perspectives": [
+    {
+      "source": "CCP / Chinese Government",
+      "bias": "Nationalist developmental",
+      "view": "China's rise is a peaceful restoration of historical greatness after a 'century of humiliation.' The CCP's model of meritocratic governance and state-directed development is superior to dysfunctional Western democracy."
+    },
+    {
+      "source": "Western Liberal",
+      "bias": "Democratic values",
+      "view": "China's governance model suppresses individual rights, persecutes minorities (Uyghurs, Tibetans), and exports authoritarian norms. Economic engagement has not produced political liberalization as hoped."
+    },
+    {
+      "source": "Global South",
+      "bias": "Pragmatic development",
+      "view": "China offers infrastructure finance and technology transfer without attaching governance conditions. For many developing nations, this is more practical than Western aid linked to political reforms."
+    },
+    {
+      "source": "Regional Neighbors",
+      "bias": "Mixed / cautious",
+      "view": "Economic dependence on China is significant and beneficial, but territorial assertiveness in the South China Sea and economic coercion of critics (Australia, Lithuania) creates genuine anxiety."
+    }
+  ],
+  "historicalContext": {
+    "summary": "One of the world's oldest continuous civilizations, China was the global economic center of gravity for most of recorded history. The 'century of humiliation' (1839–1949) — marked by the Opium Wars, Japanese invasion, and civil war — profoundly shapes CCP legitimacy and foreign policy. Mao's revolution (1949), the Cultural Revolution's destruction, and Deng Xiaoping's market reforms (1978) all define modern China's trajectory.",
+    "keyEvents": [
+      { "year": 1839, "event": "First Opium War — beginning of 'century of humiliation'" },
+      { "year": 1949, "event": "CCP victory; People's Republic of China established" },
+      { "year": 1966, "event": "Cultural Revolution begins; massive political and social upheaval" },
+      { "year": 1978, "event": "Deng Xiaoping's 'Reform and Opening Up' — market economy begins" },
+      { "year": 1989, "event": "Tiananmen Square protests suppressed" },
+      { "year": 2001, "event": "WTO accession; export-led growth accelerates" },
+      { "year": 2013, "event": "Xi Jinping takes power; Belt and Road Initiative launched" },
+      { "year": 2022, "event": "Xi secures third term; 'no limits' partnership with Russia declared" }
+    ]
+  },
+  "investmentNotes": {
+    "strengths": [
+      "Largest manufacturing base in the world",
+      "Dominant in EV, battery, and solar supply chains",
+      "Enormous domestic consumer market",
+      "Rapidly advancing in AI and semiconductors",
+      "Strong state capacity to execute long-term industrial policy"
+    ],
+    "risks": [
+      "Property sector crisis — Evergrande default a bellwether",
+      "Demographic decline — one-child policy legacy",
+      "Capital controls limit repatriation of profits",
+      "Regulatory unpredictability (tech sector crackdowns 2021)",
+      "Taiwan conflict risk would trigger severe sanctions"
+    ],
+    "sectors": ["EV / Battery", "Solar / Green Energy", "AI / Technology", "Consumer Goods", "Infrastructure"]
+  },
+  "sources": [
+    { "name": "World Bank", "url": "https://data.worldbank.org/country/CN", "type": "economic" },
+    { "name": "Freedom House", "url": "https://freedomhouse.org/country/china", "type": "political" },
+    { "name": "SIPRI Military Expenditure", "url": "https://www.sipri.org", "type": "military" },
+    { "name": "CIA World Factbook", "url": "https://www.cia.gov/the-world-factbook/countries/china/", "type": "general" }
+  ]
+}

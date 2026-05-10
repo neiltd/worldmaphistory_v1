@@ -1,0 +1,115 @@
+{
+  "id": "THA",
+  "iso2": "TH",
+  "name": "Thailand",
+  "region": "Asia",
+  "subregion": "Southeast Asia",
+  "capital": "Bangkok",
+  "lastUpdated": "2026-05-01",
+  "summary": "Thailand is Southeast Asia's second-largest economy and a long-standing US treaty ally navigating a careful balancing act between Washington and Beijing. It has experienced 13 coups since 1932, giving it one of the world's most coup-prone political systems. Despite political turbulence, it maintains a sophisticated export economy, world-class tourism infrastructure, and is emerging as a regional hub for EV manufacturing. The monarchy remains a politically untouchable institution legally protected by strict lèse-majesté laws.",
+  "indicators": {
+    "politicalStability":       { "score": 4, "trend": "declining",  "confidence": "high",   "note": "Constitutional court dissolved ruling party 2024. History of coups. Youth movement challenges monarchy." },
+    "economicDirection":        { "score": 6, "trend": "stable",     "confidence": "high",   "note": "Tourism recovery strong post-COVID. EV manufacturing investment growing. China FDI dominant." },
+    "investmentAttractiveness": { "score": 6, "trend": "improving",  "confidence": "medium", "note": "EV hub positioning attractive. Political risk and regulatory inconsistency are key deterrents." },
+    "geopoliticalRisk":         { "score": 4, "trend": "stable",     "confidence": "medium", "note": "Low direct conflict risk. Hedging between US and China creates strategic ambiguity." },
+    "educationQuality":         { "score": 5, "trend": "stable",     "confidence": "medium", "note": "PISA scores lag regional peers. Higher education improving; vocational training gaps." },
+    "healthcareQuality":        { "score": 7, "trend": "stable",     "confidence": "high",   "note": "Medical tourism destination. Universal coverage scheme broad but underfunded." },
+    "technologyInvestment":     { "score": 5, "trend": "improving",  "confidence": "medium", "note": "EV and data center investment growing. Domestic tech ecosystem nascent." }
+  },
+  "demographics": {
+    "population": 71600000,
+    "medianAge": 40.1,
+    "urbanizationRate": 52,
+    "majorEthnicGroups": ["Thai 95%", "Chinese 2%", "Malay 2%", "Other 1%"],
+    "religions": [
+      { "name": "Buddhism (Theravada)", "percent": 94.6 },
+      { "name": "Islam", "percent": 4.3 },
+      { "name": "Christianity", "percent": 0.7 },
+      { "name": "Other", "percent": 0.4 }
+    ]
+  },
+  "alliances": ["ASEAN", "BIMSTEC", "APEC", "WTO", "Non-Aligned Movement"],
+  "relationships": [
+    {
+      "countryId": "USA",
+      "countryName": "United States",
+      "type": "treaty_ally",
+      "sentiment": "mixed",
+      "summary": "Formal ally under 1954 Manila Pact and 1962 Thanat-Rusk communiqué. Relationship cooled after 2014 coup (US suspended aid). Military exercises continue but Thailand's China pivot is noted with concern in Washington."
+    },
+    {
+      "countryId": "CHN",
+      "countryName": "China",
+      "type": "strategic_partner",
+      "sentiment": "positive",
+      "summary": "China is Thailand's largest trade partner and tourist source. Massive EV investment by BYD, SAIC, and Great Wall. Chinese tourism critical to post-COVID recovery."
+    },
+    {
+      "countryId": "MYS",
+      "countryName": "Malaysia",
+      "type": "neutral",
+      "sentiment": "mixed",
+      "summary": "ASEAN partner with some border and southern insurgency complications. Economic ties strong."
+    }
+  ],
+  "perspectives": [
+    {
+      "source": "Thai Establishment (Military / Palace)",
+      "bias": "Stability and continuity",
+      "view": "Military intervention has repeatedly saved Thailand from political chaos caused by populist politicians who exploit divisions for personal gain. The monarchy is the nation's spiritual and unifying anchor."
+    },
+    {
+      "source": "Thai Progressive / Youth Movement",
+      "bias": "Democratic reform",
+      "view": "The constitutional framework is designed to entrench military power and shield the monarchy from accountability. The 2024 dissolution of the Move Forward Party — despite winning the most seats — shows elections alone cannot produce change."
+    },
+    {
+      "source": "Western Observers",
+      "bias": "Liberal democratic",
+      "view": "Thailand's democratic backsliding and lèse-majesté prosecutions are concerning. However, its strategic location makes full disengagement unattractive to Washington."
+    },
+    {
+      "source": "Chinese / BRI Perspective",
+      "bias": "Economic pragmatism",
+      "view": "Thailand is a key connectivity node for Mainland Southeast Asia. Political stability under any system is preferable to instability, and Thailand's hedging posture is respected."
+    }
+  ],
+  "historicalContext": {
+    "summary": "Uniquely among Southeast Asian nations, Thailand was never formally colonized — a fact of immense national pride that shapes its assertive foreign policy hedging. The Chakri dynasty (founded 1782) navigated 19th century colonial pressure through diplomatic skill and territorial concessions to buffer states. Modern Thailand has oscillated between democracy and military rule, with 13 successful coups since the 1932 constitutional revolution.",
+    "keyEvents": [
+      { "year": 1238, "event": "Sukhothai Kingdom — first Thai state" },
+      { "year": 1782, "event": "Chakri dynasty founded; Bangkok established as capital" },
+      { "year": 1855, "event": "Bowring Treaty with UK — navigated colonialism through openness" },
+      { "year": 1932, "event": "Constitutional revolution ends absolute monarchy" },
+      { "year": 1954, "event": "SEATO / Manila Pact — formal alliance with US" },
+      { "year": 1997, "event": "Asian Financial Crisis — baht collapse triggers regional contagion" },
+      { "year": 2006, "event": "First coup of modern era deposes Thaksin Shinawatra" },
+      { "year": 2014, "event": "Military coup; General Prayuth seizes power" },
+      { "year": 2023, "event": "Move Forward Party wins election; blocked from forming government" },
+      { "year": 2024, "event": "Constitutional Court dissolves Move Forward Party" }
+    ]
+  },
+  "investmentNotes": {
+    "strengths": [
+      "Emerging EV manufacturing hub (BYD, SAIC, Great Wall factories)",
+      "World-class medical tourism and healthcare infrastructure",
+      "ASEAN connectivity — central geography for Mekong region",
+      "Strong tourism brand and recovery post-COVID",
+      "Board of Investment (BOI) offers competitive incentives"
+    ],
+    "risks": [
+      "Political instability — coup risk always nonzero",
+      "Aging population — one of Asia's fastest-aging societies",
+      "Education quality gap limiting skilled workforce",
+      "Regulatory unpredictability for foreign investors",
+      "Overdependence on Chinese tourism (single-source risk)"
+    ],
+    "sectors": ["Automotive / EV", "Tourism", "Medical Tourism", "Food & Agriculture", "Data Centers"]
+  },
+  "sources": [
+    { "name": "World Bank", "url": "https://data.worldbank.org/country/TH", "type": "economic" },
+    { "name": "Freedom House", "url": "https://freedomhouse.org/country/thailand", "type": "political" },
+    { "name": "Bank of Thailand", "url": "https://www.bot.or.th/en", "type": "economic" },
+    { "name": "CIA World Factbook", "url": "https://www.cia.gov/the-world-factbook/countries/thailand/", "type": "general" }
+  ]
+}
