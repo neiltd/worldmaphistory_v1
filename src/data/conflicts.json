@@ -1,0 +1,220 @@
+[
+  {
+    "id": "RUS-UKR-2022",
+    "name": "Russia–Ukraine War",
+    "type": "armed_conflict",
+    "intensity": "critical",
+    "status": "active",
+    "startYear": 2022,
+    "coordinates": [32.0, 49.5],
+    "region": "Eastern Europe",
+    "parties": [
+      { "countryId": "RUS", "countryName": "Russia", "role": "Aggressor / Occupying power" },
+      { "countryId": "UKR", "countryName": "Ukraine", "role": "Defender / Occupied state" }
+    ],
+    "summary": "Russia launched a full-scale invasion of Ukraine on 24 February 2022, occupying large portions of eastern and southern Ukraine. The war has caused the largest armed conflict in Europe since World War II, with hundreds of thousands of casualties and millions of displaced persons.",
+    "currentStatus": "Active front lines across eastern Ukraine (Donetsk, Zaporizhzhia). Drone and missile exchanges targeting civilian infrastructure ongoing as of 2026.",
+    "casualties": "Est. 300,000–500,000+ combined military casualties; 10,000+ confirmed civilian deaths (UN). Likely undercounted.",
+    "internationalInvolvement": "NATO members supplying weapons, intelligence, and financial support to Ukraine. US is largest single donor. Russia backed diplomatically by China, North Korea (weapons), Iran (drones)."
+  },
+  {
+    "id": "ISR-GAZ-2023",
+    "name": "Israel–Gaza War",
+    "type": "armed_conflict",
+    "intensity": "critical",
+    "status": "active",
+    "startYear": 2023,
+    "coordinates": [34.4, 31.4],
+    "region": "Middle East",
+    "parties": [
+      { "countryId": "ISR", "countryName": "Israel", "role": "Military campaign" },
+      { "countryId": "PSE", "countryName": "Palestine (Gaza/Hamas)", "role": "Hamas governing authority / civilian population" }
+    ],
+    "summary": "Following Hamas's October 7, 2023 attack on Israel (1,200 killed, 250 taken hostage), Israel launched a major military campaign in Gaza. The conflict has created one of the worst humanitarian crises in the region's modern history.",
+    "currentStatus": "Israeli military operations ongoing in Gaza and parts of the West Bank. Ceasefire negotiations ongoing through Qatar and Egypt. Regional spillover via Hezbollah (Lebanon), Houthi attacks (Yemen), Iran proxies.",
+    "casualties": "Est. 40,000+ Palestinian deaths (Gaza Health Ministry, 2024). 1,200+ Israeli deaths in Oct 7 attack. Significant Lebanese civilian casualties from Israeli operations.",
+    "internationalInvolvement": "US provides military and diplomatic support to Israel. Arab states, Iran support Palestinian cause. ICJ case filed by South Africa. UN Security Council deadlocked."
+  },
+  {
+    "id": "SDN-CIVIL-2023",
+    "name": "Sudan Civil War",
+    "type": "civil_war",
+    "intensity": "critical",
+    "status": "active",
+    "startYear": 2023,
+    "coordinates": [30.0, 15.5],
+    "region": "Africa",
+    "parties": [
+      { "countryId": "SDN", "countryName": "Sudan Armed Forces (SAF)", "role": "State military" },
+      { "countryId": "SDN", "countryName": "Rapid Support Forces (RSF)", "role": "Paramilitary / rebel force" }
+    ],
+    "summary": "War between Sudan's national army and the paramilitary Rapid Support Forces erupted in April 2023 after a power struggle between generals al-Burhan (SAF) and Dagalo (RSF). It has triggered one of the world's largest humanitarian crises with millions displaced.",
+    "currentStatus": "RSF controls most of Darfur and parts of Khartoum. SAF conducting air strikes. Humanitarian access severely restricted. Over 10 million displaced — largest internal displacement crisis globally as of 2025.",
+    "casualties": "Est. 12,000–150,000 deaths (wide range due to access restrictions). UN warns of famine in multiple regions.",
+    "internationalInvolvement": "UAE accused of arming RSF. Egypt backs SAF. African Union and Arab League mediation attempts ongoing. US and UN sanctions on both sides."
+  },
+  {
+    "id": "MMR-CIVIL-2021",
+    "name": "Myanmar Civil War",
+    "type": "civil_war",
+    "intensity": "high",
+    "status": "escalating",
+    "startYear": 2021,
+    "coordinates": [96.5, 19.5],
+    "region": "Southeast Asia",
+    "parties": [
+      { "countryId": "MMR", "countryName": "Myanmar Military Junta (SAC)", "role": "Military government since 2021 coup" },
+      { "countryId": "MMR", "countryName": "People's Defence Force / Ethnic Armed Organisations", "role": "Resistance coalition" }
+    ],
+    "summary": "Following the February 2021 military coup that removed elected leader Aung San Suu Kyi, Myanmar descended into civil war as a resistance movement aligned with ethnic armed groups mounted an increasingly effective insurgency against the junta.",
+    "currentStatus": "Resistance forces (Operation 1027 coalition) have captured significant territory in northern and northwestern Myanmar as of 2025. Junta controls major cities but losing rural areas rapidly.",
+    "casualties": "Est. 5,000+ civilian deaths. 2.5 million+ internally displaced. Junta conscription law imposed 2024 signals manpower crisis.",
+    "internationalInvolvement": "China maintains cautious ties with junta for border stability. ASEAN 'Five Point Consensus' largely failed. US, EU sanctions on junta. Thailand hosting significant refugee flows."
+  },
+  {
+    "id": "YEM-WAR-2015",
+    "name": "Yemen War",
+    "type": "armed_conflict",
+    "intensity": "high",
+    "status": "active",
+    "startYear": 2015,
+    "coordinates": [44.5, 15.5],
+    "region": "Middle East",
+    "parties": [
+      { "countryId": "YEM", "countryName": "Houthi Movement (Ansar Allah)", "role": "Controls northwest Yemen including capital Sanaa" },
+      { "countryId": "SAU", "countryName": "Saudi-led Coalition", "role": "Backing internationally recognized government" }
+    ],
+    "summary": "Yemen's war began as a civil conflict between the Houthi movement and the internationally recognized government, escalating with Saudi-led military intervention in 2015. The Houthis, backed by Iran, control most population centers including Sanaa.",
+    "currentStatus": "Houthis attacking Red Sea shipping since Oct 2023 in solidarity with Gaza, triggering US/UK strikes. Fragile 2022 truce largely holding on main fronts but Houthi maritime campaign active.",
+    "casualties": "Est. 150,000–250,000+ deaths including conflict-induced famine and disease. Described by UN as world's worst humanitarian crisis.",
+    "internationalInvolvement": "Iran supplies weapons, training to Houthis. Saudi Arabia, UAE, US back coalition. US-UK conducting strikes on Houthi infrastructure since Jan 2024."
+  },
+  {
+    "id": "SHL-INSURGENCY",
+    "name": "Sahel Jihadist Insurgency",
+    "type": "armed_conflict",
+    "intensity": "high",
+    "status": "escalating",
+    "startYear": 2012,
+    "coordinates": [-1.0, 14.5],
+    "region": "Africa",
+    "parties": [
+      { "countryId": "MLI", "countryName": "Mali / Burkina Faso / Niger Juntas", "role": "Military governments" },
+      { "countryId": "MLI", "countryName": "JNIM / ISGS (Al-Qaeda & ISIS affiliates)", "role": "Jihadist insurgents" }
+    ],
+    "summary": "A spreading Islamist insurgency originating in northern Mali has engulfed the tri-border Sahel region. Military coups in Mali (2021), Burkina Faso (2022), and Niger (2023) have expelled French forces and aligned the region with Russia's Wagner Group.",
+    "currentStatus": "JNIM controls significant rural territory. Burkina Faso and Mali expelled French/ECOWAS forces. Russian Wagner forces deployed. Civilian massacres increasing. Spread into coastal West Africa (Togo, Benin, Ghana) accelerating.",
+    "casualties": "Est. 20,000+ deaths; 3 million+ displaced across Mali, Burkina Faso, Niger.",
+    "internationalInvolvement": "France withdrew forces 2022-2023. Russia/Wagner deployed across all three countries. US maintains intelligence presence. ECOWAS imposed sanctions on Niger junta post-2023 coup."
+  },
+  {
+    "id": "ETH-TIGRAY",
+    "name": "Ethiopian Tigray Conflict",
+    "type": "armed_conflict",
+    "intensity": "medium",
+    "status": "ceasefire",
+    "startYear": 2020,
+    "coordinates": [39.5, 13.5],
+    "region": "Africa",
+    "parties": [
+      { "countryId": "ETH", "countryName": "Ethiopian Federal Government", "role": "Central government" },
+      { "countryId": "ETH", "countryName": "Tigray People's Liberation Front (TPLF)", "role": "Regional rebel force" }
+    ],
+    "summary": "War between the Ethiopian federal government and the TPLF in Tigray from 2020-2022 caused mass atrocities and famine. A peace agreement was signed in November 2022 but implementation remains incomplete.",
+    "currentStatus": "Ceasefire holding since Nov 2022. Disarmament incomplete. Humanitarian access improving but economic recovery slow. Tensions with Eritrea (which fought alongside Ethiopian government) unresolved.",
+    "casualties": "Est. 300,000–500,000 deaths from conflict and associated famine — one of world's deadliest recent conflicts.",
+    "internationalInvolvement": "Eritrea fought alongside Ethiopia. AU brokered ceasefire. US, EU imposed sanctions. ICC investigation into atrocities ongoing."
+  },
+  {
+    "id": "SCS-DISPUTE",
+    "name": "South China Sea Dispute",
+    "type": "naval_tension",
+    "intensity": "high",
+    "status": "escalating",
+    "startYear": 1947,
+    "coordinates": [114.0, 12.0],
+    "region": "Indo-Pacific",
+    "parties": [
+      { "countryId": "CHN", "countryName": "China", "role": "Claims ~90% via 'nine-dash line'" },
+      { "countryId": "PHL", "countryName": "Philippines", "role": "EEZ claimant, US treaty ally" },
+      { "countryId": "VNM", "countryName": "Vietnam", "role": "EEZ claimant" },
+      { "countryId": "MYS", "countryName": "Malaysia", "role": "EEZ claimant" }
+    ],
+    "summary": "China claims approximately 90% of the South China Sea via its 'nine-dash line', overlapping with the EEZs of Vietnam, Philippines, Malaysia, Brunei, and Taiwan. China has built and militarized artificial islands in the Spratly and Paracel chains.",
+    "currentStatus": "Chinese coast guard and maritime militia regularly confront Filipino supply vessels at Second Thomas Shoal. Water cannons, lasers deployed against Filipino ships. US conducts Freedom of Navigation Operations. Risk of miscalculation increasing.",
+    "casualties": "No large-scale combat deaths. Multiple incidents of ships rammed, water cannons deployed, lasers used.",
+    "internationalInvolvement": "US declared SCS disputes covered by US-Philippines Mutual Defense Treaty. 2016 UNCLOS arbitration ruled against China's nine-dash line (China rejects ruling). ASEAN divided on confronting China."
+  },
+  {
+    "id": "TWN-STRAIT",
+    "name": "Taiwan Strait Tensions",
+    "type": "territorial_dispute",
+    "intensity": "high",
+    "status": "escalating",
+    "startYear": 1949,
+    "coordinates": [120.5, 24.0],
+    "region": "Indo-Pacific",
+    "parties": [
+      { "countryId": "CHN", "countryName": "China (PRC)", "role": "Claims Taiwan as sovereign territory" },
+      { "countryId": "TWN", "countryName": "Taiwan (ROC)", "role": "De facto independent state" }
+    ],
+    "summary": "China views Taiwan as a breakaway province and has never renounced the use of force to achieve 'reunification.' Taiwan has functioned as an independent democracy since 1949. The Taiwan Strait is the world's highest-stakes potential flashpoint.",
+    "currentStatus": "China conducting increasingly large military exercises around Taiwan. PLAAF violations of Taiwan's Air Defense Identification Zone near-daily. US arms sales and unofficial relations continue. Taiwan 2024 election re-elected pro-independence DPP.",
+    "casualties": "No armed conflict since 1950s. Risk of miscalculation in military exercises elevated.",
+    "internationalInvolvement": "US maintains 'strategic ambiguity' under Taiwan Relations Act. Japan, Australia have signaled concern over any Taiwan conflict. TSMC's semiconductor dominance makes Taiwan a global economic security issue."
+  },
+  {
+    "id": "IND-PAK-KASHMIR",
+    "name": "India–Pakistan Kashmir Dispute",
+    "type": "territorial_dispute",
+    "intensity": "medium",
+    "status": "active",
+    "startYear": 1947,
+    "coordinates": [75.5, 34.0],
+    "region": "South Asia",
+    "parties": [
+      { "countryId": "IND", "countryName": "India", "role": "Controls Jammu & Kashmir" },
+      { "countryId": "PAK", "countryName": "Pakistan", "role": "Controls Azad Kashmir and Gilgit-Baltistan" }
+    ],
+    "summary": "Kashmir has been disputed between India and Pakistan since 1947 partition. Both countries are nuclear-armed. India revoked Jammu & Kashmir's special status in 2019, escalating tensions. Cross-border terrorism, artillery exchanges, and diplomatic crises are recurring.",
+    "currentStatus": "Ongoing low-level insurgency in Indian-administered Kashmir. Cross-border skirmishes along the Line of Control. Relations at near-historic lows following 2025 Pahalgam attack attributed to Pakistan-based militants.",
+    "casualties": "Est. 47,000+ deaths since 1989 insurgency began. Multiple cross-border military skirmishes. 2019 Balakot air strikes marked first India-Pakistan air combat since 1971.",
+    "internationalInvolvement": "China backs Pakistan, controls Aksai Chin (disputed with India). US walks tightrope as both India (strategic partner) and Pakistan (counterterrorism) partner. Nuclear risk prevents full-scale war."
+  },
+  {
+    "id": "SYR-CONFLICT",
+    "name": "Syria Conflict",
+    "type": "civil_war",
+    "intensity": "medium",
+    "status": "de-escalating",
+    "startYear": 2011,
+    "coordinates": [38.5, 35.0],
+    "region": "Middle East",
+    "parties": [
+      { "countryId": "SYR", "countryName": "Syrian rebel factions (HTS)", "role": "Now controlling Damascus post-Dec 2024" },
+      { "countryId": "SYR", "countryName": "Assad regime remnants", "role": "Collapsed Dec 2024" }
+    ],
+    "summary": "Syria's civil war began in 2011 with Arab Spring protests. Assad's fall in December 2024 to HTS-led rebel coalition ended his family's 54-year rule. Syria now faces a complex transition with competing factions, foreign forces, and reconstruction challenges.",
+    "currentStatus": "Post-Assad transition underway. HTS (Hayat Tahrir al-Sham) controls much of Syria. Kurdish SDF controls northeast. Turkish-backed forces in northwest. Israel conducting strikes on Syrian military assets. ISIS resurging in eastern desert.",
+    "casualties": "500,000+ deaths; 13 million+ displaced (half internally) — one of largest displacement crises in history.",
+    "internationalInvolvement": "Russia, Iran backed Assad (now withdrawn). Turkey backed rebel factions. US supports Kurdish SDF (anti-ISIS). Israel conducting post-Assad strikes on Iranian weapons stockpiles."
+  },
+  {
+    "id": "ECS-DISPUTE",
+    "name": "East China Sea Dispute",
+    "type": "naval_tension",
+    "intensity": "medium",
+    "status": "active",
+    "startYear": 1968,
+    "coordinates": [124.0, 28.0],
+    "region": "Indo-Pacific",
+    "parties": [
+      { "countryId": "CHN", "countryName": "China", "role": "Claims Senkaku/Diaoyu Islands" },
+      { "countryId": "JPN", "countryName": "Japan", "role": "Administers Senkaku Islands" }
+    ],
+    "summary": "Japan administers the Senkaku Islands; China calls them Diaoyu and claims sovereignty. Chinese coast guard vessels routinely enter Japanese-administered waters. The islands are covered by the US-Japan Mutual Defense Treaty, making any Chinese seizure a potential trigger for US military involvement.",
+    "currentStatus": "Chinese coast guard vessels entering Senkaku contiguous zone almost daily. Japan scrambling fighter jets regularly. Both sides maintaining military positioning without firing shots.",
+    "casualties": "No combat deaths in modern era. Significant near-miss incidents between vessels and aircraft.",
+    "internationalInvolvement": "US explicitly states Senkaku covered by Article 5 of US-Japan Security Treaty. Taiwan also claims the islands. Korea has separate dispute with Japan over Dokdo/Takeshima islands."
+  }
+]

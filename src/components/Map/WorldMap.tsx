@@ -7,6 +7,8 @@ import {
   ZoomableGroup,
 } from 'react-simple-maps'
 import { useMapStore } from '../../store/useMapStore'
+import ConflictLayer from './ConflictLayer'
+import TradeRouteLayer from './TradeRouteLayer'
 
 const GEO_URL = 'https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json'
 
@@ -53,7 +55,7 @@ const NUM_TO_ISO3: Record<string, string> = {
 }
 
 export default function WorldMap() {
-  const { countryData, selectCountry } = useMapStore()
+  const { countryData, selectCountry, showConflicts, showTradeRoutes, showChokepoints } = useMapStore()
   const [tooltip, setTooltip] = useState<{ name: string; x: number; y: number } | null>(null)
   const [position, setPosition] = useState<{ coordinates: [number, number]; zoom: number }>({
     coordinates: [0, 20],
@@ -181,6 +183,12 @@ export default function WorldMap() {
               ))
             }
           </Geographies>
+          {/* Trade routes layer (behind conflicts) */}
+          <TradeRouteLayer showRoutes={showTradeRoutes} showChokepoints={showChokepoints} />
+
+          {/* Conflict markers layer */}
+          {showConflicts && <ConflictLayer />}
+
         </ZoomableGroup>
       </ComposableMap>
     </div>
