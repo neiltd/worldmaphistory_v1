@@ -5,6 +5,8 @@ import {
   Geographies,
   Geography,
   ZoomableGroup,
+  Sphere,
+  Graticule,
 } from 'react-simple-maps'
 import { useMapStore } from '../../store/useMapStore'
 import ConflictLayer from './ConflictLayer'
@@ -58,7 +60,7 @@ export default function WorldMap() {
   const { countryData, selectCountry, showConflicts, showTradeRoutes, showChokepoints } = useMapStore()
   const [tooltip, setTooltip] = useState<{ name: string; x: number; y: number } | null>(null)
   const [position, setPosition] = useState<{ coordinates: [number, number]; zoom: number }>({
-    coordinates: [0, 20],
+    coordinates: [0, 10],
     zoom: 1,
   })
 
@@ -92,7 +94,7 @@ export default function WorldMap() {
   }
 
   return (
-    <div className="relative w-full h-full overflow-hidden" style={{ background: '#080f1e' }}>
+    <div className="relative w-full h-full overflow-hidden" style={{ background: '#060f1c' }}>
       {/* Zoom controls */}
       <div className="absolute top-4 right-4 z-10 flex flex-col gap-1">
         <button
@@ -114,7 +116,7 @@ export default function WorldMap() {
           −
         </button>
         <button
-          onClick={() => setPosition({ coordinates: [0, 20], zoom: 1 })}
+          onClick={() => setPosition({ coordinates: [0, 10], zoom: 1 })}
           className="w-8 h-8 rounded text-xs flex items-center justify-center border transition-colors"
           style={{ background: '#111c30', borderColor: '#1e2d45', color: '#64748b' }}
           onMouseEnter={e => (e.currentTarget.style.background = '#1a2744')}
@@ -155,13 +157,17 @@ export default function WorldMap() {
       <ComposableMap
         projection="geoNaturalEarth1"
         style={{ width: '100%', height: '100%' }}
-        projectionConfig={{ scale: 155, center: [0, 15] }}
+        projectionConfig={{ scale: 118 }}
       >
         <ZoomableGroup
           zoom={position.zoom}
           center={position.coordinates}
           onMoveEnd={(pos: { coordinates: [number, number]; zoom: number }) => setPosition(pos)}
         >
+          {/* Ocean fill */}
+          <Sphere id="rsm-sphere" fill="#0c2340" stroke="#1a3a5c" strokeWidth={0.4} />
+          {/* Lat/lon grid lines */}
+          <Graticule stroke="#1a3555" strokeWidth={0.25} />
           <Geographies geography={GEO_URL}>
             {({ geographies }: { geographies: import('react-simple-maps').Geography[] }) =>
               geographies.map((geo: import('react-simple-maps').Geography) => (
