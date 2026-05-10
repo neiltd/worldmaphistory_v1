@@ -8,11 +8,49 @@ import {
 } from 'react-simple-maps'
 import { useMapStore } from '../../store/useMapStore'
 
-// Free TopoJSON world map from naturalearth via cdn.jsdelivr.net
 const GEO_URL = 'https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json'
 
-// Countries with rich data (highlights slightly)
-const RICH_DATA = new Set(['840', '156', '764']) // USA, CHN, THA (numeric ISO)
+// UN numeric ISO 3166-1 → ISO-3 alpha codes
+// Source: ISO 3166 Maintenance Agency
+const NUM_TO_ISO3: Record<string, string> = {
+  '004': 'AFG', '008': 'ALB', '012': 'DZA', '024': 'AGO', '028': 'ATG',
+  '032': 'ARG', '036': 'AUS', '040': 'AUT', '031': 'AZE', '044': 'BHS',
+  '048': 'BHR', '050': 'BGD', '052': 'BRB', '112': 'BLR', '056': 'BEL',
+  '084': 'BLZ', '204': 'BEN', '064': 'BTN', '068': 'BOL', '070': 'BIH',
+  '072': 'BWA', '076': 'BRA', '096': 'BRN', '100': 'BGR', '854': 'BFA',
+  '108': 'BDI', '116': 'KHM', '120': 'CMR', '124': 'CAN', '132': 'CPV',
+  '140': 'CAF', '148': 'TCD', '152': 'CHL', '156': 'CHN', '170': 'COL',
+  '174': 'COM', '178': 'COG', '180': 'COD', '188': 'CRI', '384': 'CIV',
+  '191': 'HRV', '192': 'CUB', '196': 'CYP', '203': 'CZE', '208': 'DNK',
+  '262': 'DJI', '214': 'DOM', '218': 'ECU', '818': 'EGY', '222': 'SLV',
+  '226': 'GNQ', '232': 'ERI', '233': 'EST', '231': 'ETH', '242': 'FJI',
+  '246': 'FIN', '250': 'FRA', '266': 'GAB', '270': 'GMB', '268': 'GEO',
+  '276': 'DEU', '288': 'GHA', '300': 'GRC', '308': 'GRD', '320': 'GTM',
+  '324': 'GIN', '624': 'GNB', '328': 'GUY', '332': 'HTI', '340': 'HND',
+  '348': 'HUN', '356': 'IND', '360': 'IDN', '364': 'IRN', '368': 'IRQ',
+  '372': 'IRL', '376': 'ISR', '380': 'ITA', '388': 'JAM', '392': 'JPN',
+  '400': 'JOR', '398': 'KAZ', '404': 'KEN', '296': 'KIR', '408': 'PRK',
+  '410': 'KOR', '414': 'KWT', '417': 'KGZ', '418': 'LAO', '422': 'LBN',
+  '426': 'LSO', '430': 'LBR', '434': 'LBY', '440': 'LTU', '442': 'LUX',
+  '450': 'MDG', '454': 'MWI', '458': 'MYS', '462': 'MDV', '466': 'MLI',
+  '470': 'MLT', '478': 'MRT', '484': 'MEX', '583': 'FSM', '498': 'MDA',
+  '496': 'MNG', '504': 'MAR', '508': 'MOZ', '104': 'MMR', '516': 'NAM',
+  '520': 'NRU', '524': 'NPL', '528': 'NLD', '554': 'NZL', '558': 'NIC',
+  '562': 'NER', '566': 'NGA', '578': 'NOR', '512': 'OMN', '586': 'PAK',
+  '585': 'PLW', '591': 'PAN', '598': 'PNG', '600': 'PRY', '604': 'PER',
+  '608': 'PHL', '616': 'POL', '620': 'PRT', '634': 'QAT', '642': 'ROU',
+  '643': 'RUS', '646': 'RWA', '659': 'KNA', '662': 'LCA', '670': 'VCT',
+  '882': 'WSM', '678': 'STP', '682': 'SAU', '686': 'SEN', '694': 'SLE',
+  '706': 'SOM', '710': 'ZAF', '724': 'ESP', '144': 'LKA', '729': 'SDN',
+  '740': 'SUR', '752': 'SWE', '756': 'CHE', '760': 'SYR', '762': 'TJK',
+  '834': 'TZA', '764': 'THA', '626': 'TLS', '768': 'TGO', '776': 'TON',
+  '780': 'TTO', '788': 'TUN', '792': 'TUR', '795': 'TKM', '798': 'TUV',
+  '800': 'UGA', '804': 'UKR', '784': 'ARE', '826': 'GBR', '840': 'USA',
+  '858': 'URY', '860': 'UZB', '548': 'VUT', '862': 'VEN', '704': 'VNM',
+  '887': 'YEM', '894': 'ZMB', '716': 'ZWE', '020': 'AND', '051': 'ARM',
+  '352': 'ISL', '438': 'LIE', '492': 'MCO', '807': 'MKD', '480': 'MUS',
+  '688': 'SRB', '703': 'SVK', '705': 'SVN', '090': 'SLB',
+}
 
 export default function WorldMap() {
   const { countryData, selectCountry } = useMapStore()
@@ -22,32 +60,33 @@ export default function WorldMap() {
     zoom: 1,
   })
 
-  function getCountryFill(geo: { id: string; properties: Record<string, string> }) {
-    const numId = geo.id
+  // Build reverse map (ISO3 → numeric) for relationship highlighting
+  const iso3ToNum = Object.fromEntries(
+    Object.entries(NUM_TO_ISO3).map(([num, iso3]) => [iso3, num])
+  )
 
-    // Selected country
-    if (countryData) {
-      // Highlight related countries
-      const related = countryData.relationships.map((r) => r.countryId)
+  function getCountryFill(numId: string): string {
+    if (!countryData) return '#1a2035'
 
-      // Map ISO3 to ISO numeric for highlighting (limited set for now)
-      const iso3ToNum: Record<string, string> = {
-        USA: '840', CHN: '156', RUS: '643', GBR: '826', THA: '764', MYS: '458',
-      }
+    const thisIso3 = NUM_TO_ISO3[numId]
 
-      if (related.some((r) => iso3ToNum[r] === numId)) {
-        const rel = countryData.relationships.find((r) => iso3ToNum[r.countryId] === numId)
-        if (rel) {
-          if (rel.sentiment === 'positive') return '#1d4ed8'
-          if (rel.sentiment === 'negative') return '#991b1b'
-          return '#92400e'
-        }
-      }
+    // Currently selected country
+    if (thisIso3 === countryData.id) return '#3b82f6'
+
+    // Relationship highlight
+    const rel = countryData.relationships.find(
+      (r) => r.countryId === thisIso3 || iso3ToNum[r.countryId] === numId
+    )
+    if (rel) {
+      if (rel.sentiment === 'positive') return '#1d4ed8'
+      if (rel.sentiment === 'negative') return '#7f1d1d'
+      return '#78350f'
     }
 
-    if (RICH_DATA.has(numId)) return '#1e3a5f'
+    // Has data file
+    if (thisIso3) return '#1e3a5f'
 
-    return '#1a2035'
+    return '#161b2e'
   }
 
   return (
@@ -77,11 +116,13 @@ export default function WorldMap() {
 
       {/* Legend */}
       <div className="absolute bottom-4 left-4 z-10 bg-slate-900/90 rounded-lg p-2 border border-slate-800 text-xs">
-        <p className="text-slate-500 mb-1.5 font-medium">Relationship legend</p>
+        <p className="text-slate-500 mb-1.5 font-medium">Map legend</p>
         {[
-          { color: 'bg-blue-800', label: 'Ally / Partner' },
+          { color: 'bg-blue-600',  label: 'Selected' },
+          { color: 'bg-blue-800',  label: 'Ally / Partner' },
           { color: 'bg-amber-900', label: 'Mixed / Neutral' },
-          { color: 'bg-red-900', label: 'Rival / Enemy' },
+          { color: 'bg-red-900',   label: 'Rival / Enemy' },
+          { color: 'bg-[#1e3a5f]', label: 'Has data' },
         ].map((l) => (
           <div key={l.label} className="flex items-center gap-2 mb-1">
             <div className={`w-3 h-3 rounded-sm ${l.color}`} />
@@ -93,7 +134,7 @@ export default function WorldMap() {
       {/* Tooltip */}
       {tooltip && (
         <div
-          className="absolute z-20 bg-slate-900 text-white text-xs px-2 py-1 rounded pointer-events-none border border-slate-700"
+          className="absolute z-20 bg-slate-900 text-white text-xs px-2 py-1 rounded pointer-events-none border border-slate-700 shadow-lg"
           style={{ left: tooltip.x + 12, top: tooltip.y - 28 }}
         >
           {tooltip.name}
@@ -112,54 +153,32 @@ export default function WorldMap() {
         >
           <Geographies geography={GEO_URL}>
             {({ geographies }: { geographies: import('react-simple-maps').Geography[] }) =>
-              geographies.map((geo: import('react-simple-maps').Geography) => {
-                const isSelected =
-                  countryData &&
-                  ['840', '156', '764'].includes(geo.id) &&
-                  (
-                    (countryData.id === 'USA' && geo.id === '840') ||
-                    (countryData.id === 'CHN' && geo.id === '156') ||
-                    (countryData.id === 'THA' && geo.id === '764')
-                  )
-
-                return (
-                  <Geography
-                    key={geo.rsmKey}
-                    geography={geo}
-                    fill={isSelected ? '#3b82f6' : getCountryFill(geo)}
-                    stroke="#0d1321"
-                    strokeWidth={0.5}
-                    style={{
-                      default: { outline: 'none' },
-                      hover:   { outline: 'none', fill: '#2563eb', cursor: 'pointer' },
-                      pressed: { outline: 'none' },
-                    }}
-                    onMouseEnter={(e: React.MouseEvent<SVGPathElement>) => {
-                      setTooltip({
-                        name: geo.properties.name,
-                        x: e.clientX,
-                        y: e.clientY,
-                      })
-                    }}
-                    onMouseMove={(e: React.MouseEvent<SVGPathElement>) => {
-                      setTooltip((t) => t ? { ...t, x: e.clientX, y: e.clientY } : null)
-                    }}
-                    onMouseLeave={() => setTooltip(null)}
-                    onClick={() => {
-                      setTooltip(null)
-                      // Map numeric ISO to our ISO-3 codes
-                      const numToIso3: Record<string, string> = {
-                        '840': 'USA',
-                        '156': 'CHN',
-                        '764': 'THA',
-                      }
-                      const id = numToIso3[geo.id]
-                      if (id) selectCountry(id)
-                      else selectCountry(geo.properties.name)
-                    }}
-                  />
-                )
-              })
+              geographies.map((geo: import('react-simple-maps').Geography) => (
+                <Geography
+                  key={geo.rsmKey}
+                  geography={geo}
+                  fill={getCountryFill(geo.id)}
+                  stroke="#0d1321"
+                  strokeWidth={0.5}
+                  style={{
+                    default: { outline: 'none' },
+                    hover:   { outline: 'none', fill: '#2563eb', cursor: 'pointer' },
+                    pressed: { outline: 'none' },
+                  }}
+                  onMouseEnter={(e: React.MouseEvent<SVGPathElement>) => {
+                    setTooltip({ name: geo.properties.name, x: e.clientX, y: e.clientY })
+                  }}
+                  onMouseMove={(e: React.MouseEvent<SVGPathElement>) => {
+                    setTooltip((t) => t ? { ...t, x: e.clientX, y: e.clientY } : null)
+                  }}
+                  onMouseLeave={() => setTooltip(null)}
+                  onClick={() => {
+                    setTooltip(null)
+                    const iso3 = NUM_TO_ISO3[geo.id]
+                    if (iso3) selectCountry(iso3)
+                  }}
+                />
+              ))
             }
           </Geographies>
         </ZoomableGroup>

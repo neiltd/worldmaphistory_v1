@@ -1,125 +1,72 @@
 {
   "id": "USA",
   "iso2": "US",
-  "name": "United States",
+  "name": "United States of America",
   "region": "Americas",
   "subregion": "Northern America",
-  "capital": "Washington D.C.",
-  "lastUpdated": "2026-05-01",
-  "summary": "The United States is the world's largest economy by nominal GDP and the dominant global military power. It leads a network of alliances spanning Europe and Asia-Pacific, while facing internal political polarization, fiscal pressures, and strategic competition from China. Its global influence is exercised through economic leverage, military presence, and soft power — though the legitimacy and sustainability of this role is increasingly contested.",
+  "capital": "Washington, D.C.",
+  "lastUpdated": "2026-05-09",
+  "summary": "The United States remains the world's preeminent economic and military power, characterized by a highly diversified economy and a robust technological sector. However, it faces significant internal political polarization and social divisions that challenge its institutional stability. Externally, it maintains a vast network of alliances but is increasingly focused on strategic competition with China and managing the repercussions of the conflict in Ukraine. The U.S. model of liberal democracy and market capitalism continues to exert global influence, even as domestic debates over trade, immigration, and fiscal policy create uncertainty regarding its future international role.",
   "indicators": {
-    "politicalStability":       { "score": 5, "trend": "declining",  "confidence": "high",   "note": "High domestic polarization; institutional stress since 2020 election cycle" },
-    "economicDirection":        { "score": 7, "trend": "stable",     "confidence": "high",   "note": "Strong services and tech sectors; high debt-to-GDP ratio is a long-term concern" },
-    "investmentAttractiveness": { "score": 8, "trend": "stable",     "confidence": "high",   "note": "Deep capital markets, rule of law, dollar dominance; protectionist trend emerging" },
-    "geopoliticalRisk":         { "score": 6, "trend": "rising",     "confidence": "medium", "note": "US-China rivalry intensifying; NATO commitments under strain" },
-    "educationQuality":         { "score": 8, "trend": "stable",     "confidence": "high",   "note": "World-class universities; K-12 system uneven by region/income" },
-    "healthcareQuality":        { "score": 7, "trend": "stable",     "confidence": "high",   "note": "High quality of care; access deeply unequal; highest per-capita cost globally" },
-    "technologyInvestment":     { "score": 10, "trend": "improving", "confidence": "high",   "note": "Dominant in AI, semiconductors, defense tech; export controls expanding" }
+    "politicalStability":       { "score": 5, "trend": "declining", "confidence": "high", "note": "High internal polarization and legislative gridlock challenge long-term stability." },
+    "economicDirection":        { "score": 7, "trend": "stable", "confidence": "high", "note": "Resilient growth and innovation offset by high public debt and fiscal deficits." },
+    "investmentAttractiveness": { "score": 9, "trend": "stable", "confidence": "high", "note": "World-leading capital markets, rule of law, and technological ecosystem." },
+    "geopoliticalRisk":         { "score": 4, "trend": "rising", "confidence": "medium", "note": "Increasingly challenged by revisionist powers and overextension of global commitments." },
+    "educationQuality":         { "score": 8, "trend": "stable", "confidence": "high", "note": "Home to world's top research universities, though K-12 performance is variable." },
+    "healthcareQuality":        { "score": 6, "trend": "declining", "confidence": "high", "note": "Advanced technology and high costs, but struggling with access and life expectancy trends." },
+    "technologyInvestment":     { "score": 10, "trend": "rising", "confidence": "high", "note": "Leading global investment in AI, semiconductors, and biotechnology." }
   },
   "demographics": {
-    "population": 335000000,
+    "population": 341814000,
     "medianAge": 38.9,
     "urbanizationRate": 83,
-    "majorEthnicGroups": ["White non-Hispanic 57%", "Hispanic 19%", "Black 13%", "Asian 6%"],
+    "majorEthnicGroups": ["White", "Hispanic", "Black", "Asian", "Multiracial"],
     "religions": [
-      { "name": "Christian", "percent": 63 },
-      { "name": "Unaffiliated", "percent": 29 },
+      { "name": "Protestant", "percent": 43 },
+      { "name": "Catholic", "percent": 20 },
+      { "name": "None/Unaffiliated", "percent": 26 },
       { "name": "Jewish", "percent": 2 },
       { "name": "Muslim", "percent": 1 }
     ]
   },
-  "alliances": ["NATO", "G7", "Five Eyes", "AUKUS", "Quad", "WTO", "IMF", "World Bank"],
+  "alliances": ["NATO", "AUKUS", "Five Eyes", "QUAD", "USMCA"],
   "relationships": [
-    {
-      "countryId": "CHN",
-      "countryName": "China",
-      "type": "rival",
-      "sentiment": "negative",
-      "summary": "Strategic rivalry across trade, technology, military, and geopolitical influence. Decoupling accelerating in semiconductors and AI supply chains."
-    },
-    {
-      "countryId": "RUS",
-      "countryName": "Russia",
-      "type": "enemy",
-      "sentiment": "negative",
-      "summary": "Adversarial relationship deepened by Russia's 2022 invasion of Ukraine. US is largest single military supplier to Ukraine."
-    },
-    {
-      "countryId": "GBR",
-      "countryName": "United Kingdom",
-      "type": "treaty_ally",
-      "sentiment": "positive",
-      "summary": "Closest ally. Shares intelligence (Five Eyes), nuclear cooperation (AUKUS), and strong diplomatic alignment on most issues."
-    },
-    {
-      "countryId": "THA",
-      "countryName": "Thailand",
-      "type": "treaty_ally",
-      "sentiment": "mixed",
-      "summary": "Formal treaty ally since 1954 Manila Pact. Relationship strained by Thailand's 2014 coup and growing Chinese economic ties."
-    }
+    { "countryId": "CHN", "countryName": "China", "type": "rival", "sentiment": "negative", "summary": "Strategic competition across trade, technology, and security in the Indo-Pacific." },
+    { "countryId": "RUS", "countryName": "Russia", "type": "enemy", "sentiment": "negative", "summary": "Direct confrontation over European security and the war in Ukraine." },
+    { "countryId": "GBR", "countryName": "United Kingdom", "type": "treaty_ally", "sentiment": "positive", "summary": "The 'Special Relationship' remains the core of transatlantic security and intelligence." },
+    { "countryId": "JPN", "countryName": "Japan", "type": "treaty_ally", "sentiment": "positive", "summary": "Key anchor of U.S. strategy in Asia and primary partner in technology containment." },
+    { "countryId": "CAN", "countryName": "Canada", "type": "ally", "sentiment": "positive", "summary": "Deeply integrated economic and defense partnership through USMCA and NORAD." }
   ],
   "perspectives": [
-    {
-      "source": "US Foreign Policy Establishment",
-      "bias": "Liberal internationalist",
-      "view": "The US-led rules-based international order has produced the longest period of great-power peace in modern history, lifted billions from poverty, and should be defended and reformed, not abandoned."
-    },
-    {
-      "source": "Global South",
-      "bias": "Post-colonial critique",
-      "view": "US foreign policy consistently prioritizes American interests over stated values. Selective application of human rights norms, support for authoritarian allies, and economic coercion undermine US credibility."
-    },
-    {
-      "source": "China / Russia",
-      "bias": "Multipolar advocacy",
-      "view": "US hegemony is a destabilizing force that suppresses sovereign decision-making. NATO expansion and military encirclement provoke the conflicts it claims to prevent."
-    },
-    {
-      "source": "US Domestic Critics (Left)",
-      "bias": "Progressive",
-      "view": "Military spending crowds out social investment. US overseas interventions have frequently caused civilian harm disproportionate to security gains."
-    },
-    {
-      "source": "US Domestic Critics (Right)",
-      "bias": "Nationalist / Realist",
-      "view": "The US has overextended itself defending allies who should fund their own security. Foreign entanglements distract from domestic renewal and border security."
-    }
+    { "source": "America First Realist", "bias": "Nationalist", "view": "The U.S. should prioritize domestic manufacturing and border security while reducing overseas military entanglements and demanding more from allies." },
+    { "source": "Liberal Internationalist", "bias": "Globalist", "view": "U.S. leadership in multilateral institutions and the promotion of democracy are essential for global stability and economic prosperity." },
+    { "source": "Chinese Strategic Analyst", "bias": "Sino-centric", "view": "The U.S. is a declining hegemon using zero-sum tactics to suppress China's legitimate rise and maintain its global dominance." },
+    { "source": "European Security Policy Expert", "bias": "Atlanticist", "view": "While the U.S. is the indispensable security guarantor for Europe, its shifting domestic politics make it an increasingly unpredictable partner." }
   ],
   "historicalContext": {
-    "summary": "Founded as a revolutionary republic in 1776, the US expanded across North America through purchase, war, and displacement of indigenous peoples. It emerged from WWII as a global superpower and anchored the Western alliance against the Soviet Union. The Cold War's end left it as the sole superpower, a 'unipolar moment' that has been gradually eroding since the 2003 Iraq War, the 2008 financial crisis, and China's rise.",
+    "summary": "Since its founding in 1776, the U.S. transitioned from an isolationist former colony to a global superpower. Key phases include westward expansion, the existential crisis of the Civil War, and the post-WWII emergence as the leader of the liberal world order.",
     "keyEvents": [
-      { "year": 1776, "event": "Declaration of Independence" },
-      { "year": 1865, "event": "Civil War ends; slavery abolished" },
-      { "year": 1945, "event": "Emerges from WWII as dominant global power; establishes UN, IMF, World Bank" },
-      { "year": 1991, "event": "Soviet Union collapses; US enters unipolar era" },
-      { "year": 2001, "event": "9/11 attacks; launches 'War on Terror'" },
-      { "year": 2008, "event": "Financial crisis; global confidence in US model shaken" },
-      { "year": 2016, "event": "Trump election signals nationalist turn; multilateral institutions under strain" },
-      { "year": 2022, "event": "Russia invades Ukraine; US leads Western response" }
+      { "year": 1776, "event": "Declaration of Independence from Great Britain." },
+      { "year": 1787, "event": "U.S. Constitution drafted, establishing the federal republic." },
+      { "year": 1803, "event": "Louisiana Purchase doubles the nation's land area." },
+      { "year": 1861, "event": "Outbreak of the American Civil War over slavery and states' rights." },
+      { "year": 1917, "event": "Entry into World War I, marking the end of isolationism." },
+      { "year": 1941, "event": "Attack on Pearl Harbor; U.S. enters World War II." },
+      { "year": 1945, "event": "End of WWII; U.S. emerges as a nuclear superpower and architect of the UN." },
+      { "year": 1964, "event": "Civil Rights Act signed, legally ending racial segregation." },
+      { "year": 1991, "event": "Collapse of the Soviet Union leaves U.S. as the sole global hegemon." },
+      { "year": 2001, "event": "September 11 attacks trigger the Global War on Terror." },
+      { "year": 2021, "event": "Withdrawal from Afghanistan and January 6 Capitol Riot." }
     ]
   },
   "investmentNotes": {
-    "strengths": [
-      "World's deepest and most liquid capital markets",
-      "Dollar is global reserve currency — structural advantage",
-      "Dominant in AI, cloud, biotech, and defense",
-      "Strong rule of law and property rights",
-      "Largest consumer market"
-    ],
-    "risks": [
-      "Federal debt exceeding 120% of GDP",
-      "Political polarization creates policy unpredictability",
-      "Protectionist industrial policy increasing costs for importers",
-      "Aging infrastructure in some sectors",
-      "Income inequality and social instability"
-    ],
-    "sectors": ["Technology", "Defense", "Biotech / Pharma", "Financial Services", "Energy (LNG exports)"]
+    "strengths": ["Innovation ecosystem", "Energy independence", "Deep capital markets", "Demographic resilience compared to peers"],
+    "risks": ["Fiscal instability/debt", "Regulatory fragmentation", "Political risk/social unrest", "Trade protectionism"],
+    "sectors": ["Artificial Intelligence", "Biotechnology", "Aerospace & Defense", "Clean Energy Tech"]
   },
   "sources": [
-    { "name": "World Bank", "url": "https://data.worldbank.org/country/US", "type": "economic" },
+    { "name": "World Bank", "url": "https://data.worldbank.org/country/USA", "type": "economic" },
     { "name": "Freedom House", "url": "https://freedomhouse.org/country/united-states", "type": "political" },
-    { "name": "SIPRI Military Expenditure", "url": "https://www.sipri.org", "type": "military" },
     { "name": "CIA World Factbook", "url": "https://www.cia.gov/the-world-factbook/countries/united-states/", "type": "general" }
   ]
 }
