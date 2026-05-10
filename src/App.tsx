@@ -9,9 +9,9 @@ export default function App() {
   const showSidePanel = !!selectedCountryId
 
   return (
-    <div className="flex flex-col h-screen bg-[#0f1117] text-slate-200">
+    <div className="flex flex-col h-screen text-slate-200" style={{ background: '#080f1e' }}>
       {/* Top bar */}
-      <header className="flex items-center justify-between px-4 py-2 border-b border-slate-800 flex-shrink-0 bg-slate-900/80 backdrop-blur gap-3">
+      <header className="flex items-center justify-between px-4 py-2 flex-shrink-0 backdrop-blur gap-3 border-b" style={{ background: '#0a1220cc', borderColor: '#1a2744' }}>
         <div className="flex items-center gap-3 flex-shrink-0">
           <span className="text-lg">🌍</span>
           <div>
@@ -49,7 +49,7 @@ export default function App() {
 
         {/* Country side panel */}
         {showSidePanel && (
-          <div className="w-80 xl:w-96 flex-shrink-0 border-l border-slate-800 bg-slate-900 overflow-hidden">
+          <div className="w-80 xl:w-96 flex-shrink-0 overflow-hidden border-l" style={{ background: '#0a1220', borderColor: '#1a2744' }}>
             <CountryPanel />
           </div>
         )}
@@ -64,7 +64,7 @@ export default function App() {
 
         {/* Empty state hint */}
         {!selectedCountryId && !selectedConflict && (
-          <div className="absolute bottom-20 left-1/2 -translate-x-1/2 bg-slate-900/90 border border-slate-700 rounded-xl px-4 py-3 text-center pointer-events-none whitespace-nowrap">
+          <div className="absolute bottom-20 left-1/2 -translate-x-1/2 rounded-xl px-4 py-3 text-center pointer-events-none whitespace-nowrap border" style={{ background: '#0a1220cc', borderColor: '#1a2744' }}>
             <p className="text-sm text-slate-300 font-medium">Click any country or conflict marker</p>
             <p className="text-xs text-slate-500 mt-0.5">Toggle layers above · Scroll to zoom · Drag to pan</p>
           </div>

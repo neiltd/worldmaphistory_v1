@@ -68,48 +68,57 @@ export default function WorldMap() {
   )
 
   function getCountryFill(numId: string): string {
-    if (!countryData) return '#1a2035'
+    if (!countryData) return '#152035'
 
     const thisIso3 = NUM_TO_ISO3[numId]
 
     // Currently selected country
-    if (thisIso3 === countryData.id) return '#3b82f6'
+    if (thisIso3 === countryData.id) return '#2563eb'
 
     // Relationship highlight
     const rel = countryData.relationships.find(
       (r) => r.countryId === thisIso3 || iso3ToNum[r.countryId] === numId
     )
     if (rel) {
-      if (rel.sentiment === 'positive') return '#1d4ed8'
+      if (rel.sentiment === 'positive') return '#1e3a8a'
       if (rel.sentiment === 'negative') return '#7f1d1d'
       return '#78350f'
     }
 
     // Has data file
-    if (thisIso3) return '#1e3a5f'
+    if (thisIso3) return '#1a2f50'
 
-    return '#161b2e'
+    return '#101825'
   }
 
   return (
-    <div className="relative w-full h-full bg-[#0d1321] overflow-hidden">
+    <div className="relative w-full h-full overflow-hidden" style={{ background: '#080f1e' }}>
       {/* Zoom controls */}
       <div className="absolute top-4 right-4 z-10 flex flex-col gap-1">
         <button
           onClick={() => setPosition((p) => ({ ...p, zoom: Math.min(p.zoom * 1.5, 8) }))}
-          className="w-8 h-8 bg-slate-800 hover:bg-slate-700 text-white rounded text-lg font-bold flex items-center justify-center border border-slate-700"
+          className="w-8 h-8 text-white rounded text-lg font-bold flex items-center justify-center border transition-colors"
+          style={{ background: '#111c30', borderColor: '#1e2d45' }}
+          onMouseEnter={e => (e.currentTarget.style.background = '#1a2744')}
+          onMouseLeave={e => (e.currentTarget.style.background = '#111c30')}
         >
           +
         </button>
         <button
           onClick={() => setPosition((p) => ({ ...p, zoom: Math.max(p.zoom / 1.5, 1) }))}
-          className="w-8 h-8 bg-slate-800 hover:bg-slate-700 text-white rounded text-lg font-bold flex items-center justify-center border border-slate-700"
+          className="w-8 h-8 text-white rounded text-lg font-bold flex items-center justify-center border transition-colors"
+          style={{ background: '#111c30', borderColor: '#1e2d45' }}
+          onMouseEnter={e => (e.currentTarget.style.background = '#1a2744')}
+          onMouseLeave={e => (e.currentTarget.style.background = '#111c30')}
         >
           −
         </button>
         <button
           onClick={() => setPosition({ coordinates: [0, 20], zoom: 1 })}
-          className="w-8 h-8 bg-slate-800 hover:bg-slate-700 text-slate-400 rounded text-xs flex items-center justify-center border border-slate-700"
+          className="w-8 h-8 rounded text-xs flex items-center justify-center border transition-colors"
+          style={{ background: '#111c30', borderColor: '#1e2d45', color: '#64748b' }}
+          onMouseEnter={e => (e.currentTarget.style.background = '#1a2744')}
+          onMouseLeave={e => (e.currentTarget.style.background = '#111c30')}
           title="Reset view"
         >
           ⊙
@@ -117,18 +126,18 @@ export default function WorldMap() {
       </div>
 
       {/* Legend */}
-      <div className="absolute bottom-4 left-4 z-10 bg-slate-900/90 rounded-lg p-2 border border-slate-800 text-xs">
-        <p className="text-slate-500 mb-1.5 font-medium">Map legend</p>
+      <div className="absolute bottom-4 left-4 z-10 rounded-lg p-2 text-xs border" style={{ background: '#0d1626cc', borderColor: '#1e2d45' }}>
+        <p className="mb-1.5 font-medium" style={{ color: '#475569' }}>Map legend</p>
         {[
-          { color: 'bg-blue-600',  label: 'Selected' },
-          { color: 'bg-blue-800',  label: 'Ally / Partner' },
-          { color: 'bg-amber-900', label: 'Mixed / Neutral' },
-          { color: 'bg-red-900',   label: 'Rival / Enemy' },
-          { color: 'bg-[#1e3a5f]', label: 'Has data' },
+          { color: '#2563eb', label: 'Selected' },
+          { color: '#1e3a8a', label: 'Ally / Partner' },
+          { color: '#78350f', label: 'Mixed / Neutral' },
+          { color: '#7f1d1d', label: 'Rival / Enemy' },
+          { color: '#1a2f50', label: 'Has data' },
         ].map((l) => (
           <div key={l.label} className="flex items-center gap-2 mb-1">
-            <div className={`w-3 h-3 rounded-sm ${l.color}`} />
-            <span className="text-slate-400">{l.label}</span>
+            <div className="w-3 h-3 rounded-sm" style={{ background: l.color }} />
+            <span style={{ color: '#94a3b8' }}>{l.label}</span>
           </div>
         ))}
       </div>
@@ -136,17 +145,17 @@ export default function WorldMap() {
       {/* Tooltip */}
       {tooltip && (
         <div
-          className="absolute z-20 bg-slate-900 text-white text-xs px-2 py-1 rounded pointer-events-none border border-slate-700 shadow-lg"
-          style={{ left: tooltip.x + 12, top: tooltip.y - 28 }}
+          className="absolute z-20 text-white text-xs px-2 py-1 rounded pointer-events-none shadow-lg border"
+          style={{ left: tooltip.x + 12, top: tooltip.y - 28, background: '#0d1626', borderColor: '#1e2d45' }}
         >
           {tooltip.name}
         </div>
       )}
 
       <ComposableMap
-        projection="geoMercator"
+        projection="geoNaturalEarth1"
         style={{ width: '100%', height: '100%' }}
-        projectionConfig={{ scale: 130 }}
+        projectionConfig={{ scale: 155, center: [0, 15] }}
       >
         <ZoomableGroup
           zoom={position.zoom}
@@ -160,11 +169,11 @@ export default function WorldMap() {
                   key={geo.rsmKey}
                   geography={geo}
                   fill={getCountryFill(geo.id)}
-                  stroke="#0d1321"
-                  strokeWidth={0.5}
+                  stroke="#0a1220"
+                  strokeWidth={0.4}
                   style={{
                     default: { outline: 'none' },
-                    hover:   { outline: 'none', fill: '#2563eb', cursor: 'pointer' },
+                    hover:   { outline: 'none', fill: '#1d4ed8', cursor: 'pointer' },
                     pressed: { outline: 'none' },
                   }}
                   onMouseEnter={(e: React.MouseEvent<SVGPathElement>) => {
